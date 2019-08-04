@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ContentWrapperComponent } from './reusable/content-wrapper/content-wrapper.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: ContentWrapperComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
