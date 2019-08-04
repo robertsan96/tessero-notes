@@ -1,0 +1,19 @@
+#left-bar {
+
+    width: 20%;
+    float: left;
+    padding: 10px;
+    border-right: 1px solid #e6e6e6;
+
+    ul {
+        li {
+            span {
+                float: right;
+                background: red;
+            }
+            min-height: 50px;
+            max-height: 150px;
+            overflow-y: hidden;
+        }
+    }
+}
