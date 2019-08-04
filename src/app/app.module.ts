@@ -5,18 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftBarComponent } from './reusable/left-bar/left-bar.component';
 import { TopBarComponent } from './reusable/top-bar/top-bar.component';
-import { ContentWrapperComponent } from './reusable/content-wrapper/content-wrapper.component';
 import { NotesComponent } from './notes/notes.component';
 import { NoteDetailComponent } from './notes/note-detail/note-detail.component';
+import { NoteListComponent } from './note-list/note-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LeftBarComponent,
     TopBarComponent,
-    ContentWrapperComponent,
     NotesComponent,
-    NoteDetailComponent
+    NoteDetailComponent,
+    NoteListComponent
   ],
   imports: [
     BrowserModule,

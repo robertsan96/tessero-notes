@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContentWrapperComponent } from './content-wrapper.component';
+import { NoteListComponent } from './note-list.component';
 
-describe('ContentWrapperComponent', () => {
-  let component: ContentWrapperComponent;
-  let fixture: ComponentFixture<ContentWrapperComponent>;
+describe('NoteListComponent', () => {
+  let component: NoteListComponent;
+  let fixture: ComponentFixture<NoteListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentWrapperComponent ]
+      declarations: [ NoteListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContentWrapperComponent);
+    fixture = TestBed.createComponent(NoteListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
