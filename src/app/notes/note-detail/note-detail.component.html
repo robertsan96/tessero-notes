@@ -1,4 +1,7 @@
 <div id="note-content">
-    <input type="text" [(ngModel)]="note.title">
-    <textarea>{{ note.content }}</textarea>
+    <input [placeholder]="noteTitlePlaceholder" type="text" [(ngModel)]="note.title">
+    <textarea [placeholder]="noteContentPlaceholder" [(ngModel)]="note.content">{{ note.content }}</textarea>
+
+    <button (click)="onUpdate()" *ngIf="mode == 0">Update</button>
+    <button (click)="onCreate()" *ngIf="mode == 1">Create</button>
 </div>

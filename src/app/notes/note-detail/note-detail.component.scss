@@ -12,11 +12,17 @@
     }
 
     textarea {
-        min-height: 500px;
+        min-height: 250px;
         width: 100%;
         font-size: 28px;
         border: 0px!important;
         text-align: center;
         outline: none!important;
+    }
+
+    button {
+        width: 100%;
+        background: rgb(111, 201, 111);
+        height: 50px;
     }
 }

@@ -1,14 +1,12 @@
 <div id="left-bar">
-
+    <div id="logo">
+        <button (click)="newNote()">+ new note</button>
+    </div>
     <ul>
-        <li>Note 1<span>delete</span></li>
-        <li>Note 1</li>
-        <li>Note 1</li>
-        <li>Note 1</li>
-        <li>Note 1</li>
-        <li>Note 1</li>
-        <li>Note 1</li>
-        <li>Note 1</li>
-        <li>Note 1</li>
+        <li *ngFor="let note of notes" (click)="didClickNote(note)">
+            <div *ngIf="note !== null">
+                {{ note.title }}<button (click)="didClickDelete(note)">delete</button>
+            </div>
+        </li>
     </ul>
 </div>

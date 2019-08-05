@@ -43,7 +43,7 @@ export class NoteService {
         return foundNote[0];
     }
 
-    createNote(note: Note): boolean {
+    createNote(note: Note): Note | null {
         let notesString: string;
         const notes = this.getNotes();
         note.id = this.getUniqueIdentifier();
@@ -51,10 +51,10 @@ export class NoteService {
         try {
             notesString = JSON.stringify(notes);
         } catch {
-            return false;
+            return null;
         }
         this.cookieService.set(NoteKeys.Notes, notesString);
-        return true;
+        return note;
     }
 
     deleteNote(id: number): boolean {
