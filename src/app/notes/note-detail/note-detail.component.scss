@@ -1,0 +1,22 @@
+#note-content {
+    padding: 25px;
+
+    input {
+        width: 100%;
+        height: 60px;
+        border: 0!important;
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 100px;
+        outline: none!important;
+    }
+
+    textarea {
+        min-height: 500px;
+        width: 100%;
+        font-size: 28px;
+        border: 0px!important;
+        text-align: center;
+        outline: none!important;
+    }
+}

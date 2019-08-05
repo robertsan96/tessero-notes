@@ -19,8 +19,28 @@ export class NoteService {
         let notes: Note[] = [];
         try {
             notes = JSON.parse(noteString);
-        } catch {}
+        } catch {
+            return [];
+        }
         return notes;
+    }
+
+    getNote(id: number): Note | null {
+        const noteString: string = this.cookieService.get(NoteKeys.Notes);
+        let notes: Note[] = [];
+        try {
+            notes = JSON.parse(noteString);
+        } catch {}
+        console.log(notes);
+        const foundNote = notes.filter((noteElement) => {
+            if (noteElement !== null) {
+                return noteElement.id === id;
+            }
+        });
+        if (isNullOrUndefined(foundNote[0])) {
+            return null;
+        }
+        return foundNote[0];
     }
 
     createNote(note: Note): boolean {
@@ -28,6 +48,22 @@ export class NoteService {
         const notes = this.getNotes();
         note.id = this.getUniqueIdentifier();
         notes.push(note);
+        try {
+            notesString = JSON.stringify(notes);
+        } catch {
+            return false;
+        }
+        this.cookieService.set(NoteKeys.Notes, notesString);
+        return true;
+    }
+
+    deleteNote(id: number): boolean {
+        let notesString: string;
+        let notes = this.getNotes();
+
+        notes = notes.filter((noteElement) => {
+            return noteElement.id !== id;
+        });
         try {
             notesString = JSON.stringify(notes);
         } catch {
