@@ -29,7 +29,9 @@ export class LeftBarComponent implements OnInit {
   didClickDelete(note: Note) {
     this.noteService.deleteNote(note.id);
     this.notes = this.noteService.getNotes();
-    window.location.reload();
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 
   didClickNote(note: Note) {
